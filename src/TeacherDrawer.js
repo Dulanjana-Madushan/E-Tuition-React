@@ -7,10 +7,8 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
-import PaymentsIcon from '@mui/icons-material/Payments';
 import ChatIcon from '@mui/icons-material/Chat';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import SettingsIcon from '@mui/icons-material/Settings';
 import { useTheme } from '@mui/material/styles';
 import { makeStyles }from '@mui/styles';
 import { useState } from 'react';
@@ -65,7 +63,7 @@ export default function TeacherDrawer({open}) {
                 },
             }}
         >
-            <Toolbar />
+        <Toolbar />
             <Box>
                 <List 
                     sx={{color:'white'}}
@@ -83,22 +81,13 @@ export default function TeacherDrawer({open}) {
                         </ListItemIcon>
                         <ListItemText primary="Home" />
                     </ListItemButton>
+
+
+                
+
                     <ListItemButton
                         selected={selectedIndex === 1}
                         onClick={(event) => handleListItemClick(1)}
-                        classes={{
-                            root: styles.root,
-                            selected: styles.selected
-                        }}
-                    >
-                        <ListItemIcon>
-                            <PaymentsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Payments" />
-                    </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 2}
-                        onClick={(event) => handleListItemClick(2)}
                         classes={{
                             root: styles.root,
                             selected: styles.selected
@@ -109,9 +98,13 @@ export default function TeacherDrawer({open}) {
                         </ListItemIcon>
                         <ListItemText primary="Chat" />
                     </ListItemButton>
+
+
+
+
                     <ListItemButton
-                        selected={selectedIndex === 3}
-                        onClick={(event) => handleListItemClick(3)}
+                        selected={selectedIndex === 2}
+                        onClick={(event) => handleListItemClick(2)}
                         classes={{
                             root: styles.root,
                             selected: styles.selected
@@ -122,19 +115,8 @@ export default function TeacherDrawer({open}) {
                         </ListItemIcon>
                         <ListItemText primary="Notifications" />
                     </ListItemButton>
-                    <ListItemButton
-                        selected={selectedIndex === 4}
-                        onClick={(event) => handleListItemClick(4)}
-                        classes={{
-                            root: styles.root,
-                            selected: styles.selected
-                        }}
-                    >
-                        <ListItemIcon>
-                            <SettingsIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Setting" />
-                    </ListItemButton>
+
+
                 </List>
             </Box>
         </Drawer>
