@@ -10,11 +10,13 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 //import MoreIcon from '@mui/icons-material/MoreVert';
 import { useState } from 'react';
-import TeacherDrawer from './TeacherDrawer';
+import Drawer from './TeacherDrawer';
 // import ClassCard from './TeacherClassList';
 import TeacherHome from './TeacherHome';
 // import { Container } from '@mui/material';
 import PayTable from './PayTable';
+//import {Drawer as MUIDrawer, Box } from '@mui/material';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 export default function TeacherNavbar() {
   
@@ -75,7 +77,7 @@ export default function TeacherNavbar() {
 
   return (
     <>
-      <Box sx={{display:'flex', height:"5"}}>
+      <Box sx={{display:'flex', backgroundColor: '#adc345', height:"5"}}>
         <AppBar 
           position="fixed" 
           sx={{ 
@@ -116,12 +118,14 @@ export default function TeacherNavbar() {
         </AppBar>
         {renderMobileMenu}
       </Box>
-      <Box sx={{display:'flex' }}>
+      
+        <Box sx={{display:'flex'}}>
+          <Drawer open={open}/>
+          {/*<TeacherHome path='/home'/>*/}
+        </Box>
         
-        <TeacherDrawer open= {open}/>
-        <TeacherHome path='/home'/>
-        
-      </Box>
+    
+    
     </>
   );
 }

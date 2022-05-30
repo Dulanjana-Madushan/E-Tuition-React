@@ -5,14 +5,13 @@ import useFetch from './useFetch';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CircularProgress from '@mui/material/CircularProgress';
-
-
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import AddIcon from '@mui/icons-material/Add';
 import { useState } from 'react';
 import { Container,  Modal, TextField } from '@mui/material';
 import { makeStyles } from '@mui/styles';
+import { Class } from '@mui/icons-material';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,17 +35,19 @@ const useStyles = makeStyles((theme) => ({
 
 const TeacherHome = () => {
 
-    const {data, isLoading, error} = useFetch('http://localhost:5000/subjects/myclasses/5d7a514b5d2c12c7449be041');
+    const {data, isLoading, error} = useFetch('http://localhost:5000/subject/myclasses/5d7a514b5d2c12c7449be041');
 
     const theme = useTheme();
     const match = useMediaQuery(theme.breakpoints.down("sm"));
     const classes = useStyles();
     const [open, setOpen] = useState(false);
+    
 
 
     
 
-    return (  
+    return ( 
+    
         <Box
             display='flex'
             flexDirection='column'
@@ -101,8 +102,10 @@ const TeacherHome = () => {
             </Stack>
             </Box>
 
-            
-            
+            <Box>
+                <ClassCard /> 
+            </Box>
+
             <Box
                 display='flex'
                 flexWrap="wrap"
@@ -117,6 +120,7 @@ const TeacherHome = () => {
                 ))}
             </Box>
         </Box>
+  
     );
 }
  
