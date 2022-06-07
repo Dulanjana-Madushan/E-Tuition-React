@@ -47,7 +47,6 @@ const TeacherHome = () => {
     
 
     return ( 
-    
         <Box
             display='flex'
             flexDirection='column'
